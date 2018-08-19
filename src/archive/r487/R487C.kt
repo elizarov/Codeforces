@@ -15,7 +15,7 @@ fun main(args: Array<String>) {
         }
     }
     repeat(c) {
-        f[i][p + (i % 2) + 1] = 'archive.r504.C'
+        f[i][p + (i % 2) + 1] = 'C'
         i++
         if (i == n - 1) {
             i = 1

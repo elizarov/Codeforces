@@ -4,11 +4,11 @@ import org.junit.*
 import java.util.*
 import kotlin.test.*
 
-class LFenwickTest {
+class LFenwickTreeTest {
     @Test
     fun testFillSum() {
         val n = 10_000
-        val f = LFenwick(n)
+        val f = LFenwickTree(n)
         val v = 42L
         f.fill(v)
         val rnd = Random(1)
@@ -23,7 +23,7 @@ class LFenwickTest {
     @Test
     fun testUpdate() {
         val n = 1000
-        val f = LFenwick(n)
+        val f = LFenwickTree(n)
         val v = MutableList(n) { 0L }
         val rnd = Random(1)
         repeat(1000) {

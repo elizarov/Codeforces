@@ -1,6 +1,6 @@
 package algo
 
-class LFenwick(n: Int) {
+class LFenwickTree(n: Int) {
     val a = LongArray(n)
 
     fun fill(v: Long) {

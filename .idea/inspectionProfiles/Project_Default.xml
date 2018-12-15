@@ -4,6 +4,6 @@
     <inspection_tool class="InconsistentLineSeparators" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="ProblematicWhitespace" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="RedundantVisibilityModifier" enabled="false" level="WARNING" enabled_by_default="false" />
-    <inspection_tool class="Reformat" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="Reformat" enabled="false" level="WARNING" enabled_by_default="false" />
   </profile>
 </component>

@@ -12,6 +12,14 @@ fun main(args: Array<String>) {
     }
 }
 
+fun sqr(x: Double) = x * x
+
+fun computeK(n: Int): Int {
+    var k = 1
+    while (4 * k * sqr(log2(k.toDouble())) < n) k++
+    return k
+}
+
 class PermIntersect(
     val n: Int,
     val a: IntArray,
@@ -27,7 +35,7 @@ class PermIntersect(
         }
     }
 
-    val k = sqrt(n.toDouble()).roundToInt()
+    val k = computeK(n)
     val d = IntArray(k + 1) { i -> i * n / k }
 
     val f = IFenwickTree2(k, k)

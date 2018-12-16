@@ -21,7 +21,8 @@ class LFenwickTree(n: Int) {
     }
 
     fun sum(fromIndex: Int, toIndex: Int): Long = // inclusive
-        sum(toIndex) - sum(fromIndex - 1)
+        if (toIndex < fromIndex) 0 else
+            sum(toIndex) - sum(fromIndex - 1)
 
     fun update(index: Int, delta: Long) {
         var i = index

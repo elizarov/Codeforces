@@ -24,3 +24,5 @@ fun main(args: Array<String>) {
     System.setOut(out)
     println("Done in $time ms")
 }
+
+private fun bufferOut(block: PrintWriter.() -> Unit) = PrintWriter(System.out).use { block(it) }

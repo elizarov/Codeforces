@@ -59,4 +59,4 @@ fun solveGraph(n: Int, g: Array<ArrayList<Int>>): Long {
     return res
 }
 
-fun bufferOut(block: PrintWriter.() -> Unit) = PrintWriter(System.out).use { block(it) }
+private fun bufferOut(block: PrintWriter.() -> Unit) = PrintWriter(System.out).use { block(it) }

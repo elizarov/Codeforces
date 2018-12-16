@@ -1,7 +1,13 @@
-fun main(args: Array<String>) {
+import java.io.*
+
+fun main(args: Array<String>) = bufferOut { readSolveWrite() }
+
+private fun PrintWriter.readSolveWrite() {
     val (n, m) = readLine()!!.splitToIntArray()
 
 }
+
+private fun bufferOut(block: PrintWriter.() -> Unit) = PrintWriter(System.out).use { block(it) }
 
 private fun String.splitToIntArray(): IntArray {
     val n = length

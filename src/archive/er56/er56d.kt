@@ -1,6 +1,10 @@
 package archive.er56
 
-fun main(args: Array<String>) {
+import java.io.*
+
+fun main(args: Array<String>) = bufferOut { er56dMain() }
+
+fun PrintWriter.er56dMain() {
     val t = readLine()!!.toInt()
     repeat(t) {
         val (n, m) = readLine()!!.split(" ").map { it.toInt() }
@@ -54,3 +58,5 @@ fun solveGraph(n: Int, g: Array<ArrayList<Int>>): Long {
     }
     return res
 }
+
+fun bufferOut(block: PrintWriter.() -> Unit) = PrintWriter(System.out).use { block(it) }

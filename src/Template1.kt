@@ -26,7 +26,7 @@ private fun String.splitToIntArray(): IntArray {
         }
         while (true) {
             val d = c.toInt() - '0'.toInt()
-            require(d >= 0 && d <= 9) { "Unexpected character '$c' at $i" }
+            require(d in 0..9) { "Unexpected character '$c' at $i" }
             require(cur >= Integer.MIN_VALUE / 10) { "Overflow at $i" }
             cur = cur * 10 - d
             require(cur <= 0) { "Overflow at $i" }

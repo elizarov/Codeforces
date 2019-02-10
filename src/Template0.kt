@@ -1,6 +1,6 @@
 import java.io.*
 
-fun main(args: Array<String>) = bufferOut { readSolveWrite() }
+fun main() = bufferOut { readSolveWrite() }
 
 private fun PrintWriter.readSolveWrite() {
     val (n, m) = readLine()!!.split(" ").map { it.toInt() }

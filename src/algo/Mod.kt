@@ -16,7 +16,8 @@ fun Int.modInv(n: Int): Int {
 }
 
 fun main() {
-    val m = 11
-    for (i in 1 until m)
-        println("$i -> ${i.modInv(m)}")
+//    val m = 11
+//    for (i in 1 until m)
+//        println("$i -> ${i.modInv(m)}")
+    println(2.modInv(1_000_000_007))
 }

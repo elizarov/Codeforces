@@ -1,11 +1,12 @@
 import java.io.*
 
-fun main() = bufferOut { readSolveWrite() }
+fun main() = PrintWriter(System.out).use { it.solve() }
 
-private fun PrintWriter.readSolveWrite() {
-    val (n, m) = readLine()!!.splitToIntArray()
+private fun PrintWriter.solve() {
+    val (n, m) = readLine()!!.split(" ").map { it.toInt() }
 
 }
+
 
 private fun bufferOut(block: PrintWriter.() -> Unit) = PrintWriter(System.out).use { block(it) }
 

@@ -1,0 +1,6 @@
+fun main() {
+    repeat (readLine()!!.toInt()) {
+        val n = readLine()!!.toInt()
+        val a = readL
+    }
+}

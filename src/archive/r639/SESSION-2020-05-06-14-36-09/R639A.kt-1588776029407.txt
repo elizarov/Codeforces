@@ -1,0 +1,14 @@
+fun main() {
+    repeat (readLine()!!.toInt()) {
+        val n = readLine()!!.toInt()
+        val a = readLine()!!.split(" ").map { it.toInt() }
+        val c = IntArray(n)
+        for (i in 0 until n) {
+            c[(i + a[i]) mod n]++
+        }
+    }
+}
+
+infix fun Int.mod(n: Int): Int {
+    val t =     
+}

@@ -1,0 +1,9 @@
+fun main() {
+    val (n, m) = readLine()!!.split(" ").map { it.toInt() }
+    val a = Array(n) { readLine()!!.toCharArray() }
+    println(solveMagnet(n, m, a))
+}
+
+fun solveMagnet(n: Int, m: Int, a: Array<CharArray>): Int {
+    for (i in 0 until n) 
+}

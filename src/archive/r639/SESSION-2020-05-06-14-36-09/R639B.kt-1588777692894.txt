@@ -1,0 +1,54 @@
+fun main() {
+    val (n, m) = readLine()!!.split(" ").map { it.toInt() }
+    val a = Array(n) { readLine()!!.toCharArray() }
+    println(solveMagnet(n, m, a))
+}
+
+fun solveMagnet(n: Int, m: Int, a: Array<CharArray>): Int {
+    for (i in 0 until n) {
+        val r = a[i]
+        if (!goodRow(r)) return -1
+        
+    }
+    for (j in 0 until m) {
+        val r = CharArray(n) { i -> a[i][j] }
+        if (!goodRow(r)) return -1
+    }
+    var c = 0
+    val qi = IntArray(n * m)
+    val qj = IntArray(n * m)
+    var qh = 0
+    var qt = 0
+    fun visit(i: Int, j: Int) {
+        if (i !in 0 until n || j !in 0 until m || a[i][j] != '#') return
+        a[i][j] = '*'
+        qi[qt] = i
+        qj[qt] = j
+        qt++
+    }
+    for (i in 0 until n) for (j in 0 until m) {
+        if (a[i][j] == '#') {
+            c++
+            visit(i, j)
+            while (qh < qt) {
+                val ci = qi[qh]
+                val cj = qj[qh]
+                qh++
+                visit(ci + 1, cj)
+                visit(ci - 1, cj)
+                visit(ci, cj + 1)
+                visit(ci, cj - 1)
+            }
+        }
+    }
+    return c
+}
+
+fun solveMagnet(n: Int, m: Int, a: Array<CharArray>): Int {
+
+fun goodRow(r: CharArray): Boolean {
+    val i = r.indexOfFirst { it == '#' }
+    if (i < 0) return true
+    val j = r.indexOfLast { it == '#' }
+    return r.slice(i..j).all { it == '#' }
+}

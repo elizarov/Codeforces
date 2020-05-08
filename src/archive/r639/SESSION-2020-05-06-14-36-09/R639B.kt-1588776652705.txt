@@ -1,0 +1,5 @@
+fun main() {
+    val (n, m) = readLine()!!.split(" ").map { it.toInt() }
+    val a = Array(n) { readLine()!!.toCharArray()}
+    println(n)
+}

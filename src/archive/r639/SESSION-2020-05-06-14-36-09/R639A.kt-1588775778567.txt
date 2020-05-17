@@ -1,4 +1,0 @@
-fun main() {
-    repeat (readLine()!!.toInt()
-    println(n)
-}

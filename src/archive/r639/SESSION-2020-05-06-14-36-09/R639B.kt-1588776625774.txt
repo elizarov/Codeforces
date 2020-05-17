@@ -1,4 +1,0 @@
-fun main() {
-    val (n, m) = readLine()!!.t
-    println(n)
-}

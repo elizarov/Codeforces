@@ -1,9 +1,0 @@
-fun main() {
-    val (n, m) = readLine()!!.split(" ").map { it.toInt() }
-    val a = Array(n) { readLine()!!.toCharArray() }
-    println(solveMagnet(a))
-}
-
-fun solveMagnet(a: Array<CharArray>) {
-    TODO("Not yet implemented")
-}

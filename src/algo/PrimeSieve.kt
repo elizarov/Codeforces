@@ -40,14 +40,14 @@ fun primeSieve(n: Int): PrimeSieve {
     return PrimeSieve(lp, mp, pr.copyOf(pc))
 }
 
-fun main() {
-    val n = 10_000_000
-    val (ps, time) = measureTimedValue { primeSieve(n) }
-    println("Found ${ps.pr.size} primes up to $n in $time")
-    println("Primes: ${ps.pr.take(30)}")
-    val x = 9_999_999
-    println("Factors of $x:")
-    ps.factors(x) {
-        println(it)
-    }
-}
+//fun main() {
+//    val n = 10_000_000
+//    val (ps, time) = measureTimedValue { primeSieve(n) }
+//    println("Found ${ps.pr.size} primes up to $n in $time")
+//    println("Primes: ${ps.pr.take(30)}")
+//    val x = 9_999_999
+//    println("Factors of $x:")
+//    ps.factors(x) {
+//        println(it)
+//    }
+//}

@@ -7,7 +7,7 @@ package algo
 // Returns matching A -> B
 fun Graph.maxBiMatching(m: Int): IntArray {
     val p = IntArray(m) { -1 } // matching A -> B
-    val r = IntArray(vCnt - m) { -1 } // matching B -> A
+    val r = IntArray((vCnt - m).coerceAtLeast(0)) { -1 } // matching B -> A
     val q = IntArray(m) // queue
     val a = IntArray(m) { -1 } // prev vertex in A
     val b = IntArray(m) // prev vertex in B

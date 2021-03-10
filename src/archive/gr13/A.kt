@@ -1,3 +1,5 @@
+package archive.gr13
+
 fun main() {
     val (n, q) = readLine()!!.split(" ").map { it.toInt() }
     val a = readLine()!!.split(" ").map { it.toInt() }.toIntArray()

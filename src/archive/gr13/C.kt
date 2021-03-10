@@ -1,3 +1,5 @@
+package archive.gr13
+
 fun main() {
     repeat(readLine()!!.toInt()) {
         val n = readLine()!!.toInt()

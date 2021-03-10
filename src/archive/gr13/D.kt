@@ -1,3 +1,5 @@
+package archive.gr13
+
 fun main() {
     repeat(readLine()!!.toInt()) {
         val (u, v) = readLine()!!.split(" ").map { it.toInt() }

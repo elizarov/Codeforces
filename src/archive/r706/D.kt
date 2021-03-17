@@ -6,7 +6,7 @@ private fun mul(a: Int, b: Int) = (a.toLong() * b % MOD).toInt()
 
 fun main() {
     val (n, m) = readLine()!!.split(" ").map { it.toInt() }
-    val d = Array(n) { IntArray(n) { Int.MAX_VALUE / 2 } }
+    val d = List(n) { IntArray(n) { Int.MAX_VALUE / 2 } }
     for (i in 0 until n) {
         d[i][i] = 0
     }
@@ -27,7 +27,7 @@ fun main() {
         }
     }
     for (x in 0 until n) {
-        val row = IntArray(n) { y ->
+        val row = List(n) { y ->
             var prod = 1
             val dx = d[x]
             val xy = dx[y]

@@ -22,7 +22,7 @@ private fun solveE() {
         }
     }
     dfs(1, 1)
-    val md = vd.max()!!
+    val md = vd.maxOrNull()!!
     data class Ans(val d0: Int, val x: Int, val sd: Int)
     fun qd(d0: Int, u: Int = -1): Ans {
         val c = (1..n).filter { vd[it] == d0 && it != u }

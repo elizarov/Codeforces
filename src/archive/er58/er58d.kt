@@ -13,7 +13,7 @@ fun main() {
 }
 
 fun solveTree(a: IntArray, g: Array<ArrayList<Int>>): Int {
-    val m = a.max()!!
+    val m = a.maxOrNull()!!
     val p = IntArray(m)
     var pc = 1
     p[0] = 2

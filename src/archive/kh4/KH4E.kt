@@ -7,7 +7,7 @@ fun main() {
     val a = Array(n) { readLine()!!.split(" ").map { it.toInt() }.toIntArray() }
     val rs = LongArray(n) { i -> (0 until m).map { j -> a[i][j].toLong() }.sum() }.toDistSum()
     val cs = LongArray(m) { j -> (0 until n).map { i -> a[i][j].toLong() }.sum() }.toDistSum()
-    fun ans() = rs.min()!! + cs.min()!!
+    fun ans() = rs.minOrNull()!! + cs.minOrNull()!!
     print(ans())
     repeat(q) {
         val (x1, y1, z) = readLine()!!.split(" ").map { it.toInt() }

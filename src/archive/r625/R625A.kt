@@ -8,5 +8,5 @@ fun main() {
         val x = b[i] - i + n
         s[x] = s[x] + b[i]
     }
-    println(s.max())
+    println(s.maxOrNull())
 }

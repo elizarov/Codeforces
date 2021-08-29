@@ -7,7 +7,7 @@ fun main(args: Array<String>) {
     val n = b[0].size
     val d = Array(n) { IntArray(3 ) }
     for (i in 1 until n) {
-        val best = d[i - 1].max()!!
+        val best = d[i - 1].maxOrNull()!!
         for (p in 0..2) d[i][p] = best
         if (b[0][i - 1] == '0' && b[1][i - 1] == '0') {
             for (p in 0..2) {

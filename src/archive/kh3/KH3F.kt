@@ -38,6 +38,6 @@ private fun solveCase() {
     }
     advance(Int.MAX_VALUE)
     d.sortBy { it.i }
-    println(maxOf(0, d.map { it.t - it.b }.max()!!))
+    println(maxOf(0, d.map { it.t - it.b }.maxOrNull()!!))
     println(d.joinToString(" ") { it.t.toString() })
 }

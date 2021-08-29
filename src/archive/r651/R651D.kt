@@ -18,7 +18,7 @@ fun main() {
         return false
     }
     var l = 0
-    var r = a.max()!!
+    var r = a.maxOrNull()!!
     val k0 = (k + 1) / 2
     val k1 = k / 2
     val io = k % 2

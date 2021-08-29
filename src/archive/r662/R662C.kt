@@ -7,7 +7,7 @@ fun main() {
         for (a in readLine()!!.split(" ").map { it.toInt() }) {
             c[a]++
         }
-        val mc = c.max()!!
+        val mc = c.maxOrNull()!!
         val mcc = c.count { it == mc }
         val d = (n - mcc) / (mc - 1) - 1
         println(d)

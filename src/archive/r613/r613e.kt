@@ -41,7 +41,7 @@ private fun PrintWriter.readSolveWrite() {
         for (e in es) {
             if (mc[e.x]!! > 1) oc[e.i]++
         }
-        val best = max(-1, oc.max()!!)
+        val best = max(-1, oc.maxOrNull()!!)
         println(uc + best)
     }
 }

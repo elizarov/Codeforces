@@ -3,7 +3,7 @@ package archive.er89
 fun main() {
     val n = readLine()!!.toInt()
     val a = readIntArray()
-    val ps = primeSieve(a.max()!! + 1)
+    val ps = primeSieve(a.maxOrNull()!! + 1)
     val d1 = IntArray(n) { -1 }
     val d2 = IntArray(n) { -1 }
     for ((i, x) in a.withIndex()) {

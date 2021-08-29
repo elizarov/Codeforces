@@ -7,6 +7,6 @@ fun main() {
     val p = IntArray(n)
     for (i in 0 until n) p[b[i]] = i
     val d = List(n) { i -> (p[a[i]] - i + n) % n }
-    val c = d.groupingBy { it }.eachCount().values.max()!!
+    val c = d.groupingBy { it }.eachCount().values.maxOrNull()!!
     println(c)
 }

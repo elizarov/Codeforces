@@ -7,7 +7,7 @@ fun main() {
 }
 
 fun solveGcdLcm(n: Int, a: List<Int>): Long {
-    val ps = primeSieve(a.max()!! + 1)
+    val ps = primeSieve(a.maxOrNull()!! + 1)
     val pc = ps.pr.size
     val min0 = IntArray(pc) { Int.MAX_VALUE }
     val min1 = IntArray(pc) { Int.MAX_VALUE }

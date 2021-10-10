@@ -1,3 +1,5 @@
+package archive.unsorted1
+
 fun main() {
     repeat(readLine()!!.toInt()) {
         val (n, m) = readLine()!!.split(" ").map { it.toInt() }

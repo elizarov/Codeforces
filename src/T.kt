@@ -1,7 +1,7 @@
 fun main() {
     repeat(readLine()!!.toInt()) {
-        val n = readLine()!!.toInt()
-        val a = readLine()!!.split(" ").map { it.toInt() }
+        val n = readln().toInt()
+        val a = readln().split(" ").map { it.toInt() }
         
     }
 }

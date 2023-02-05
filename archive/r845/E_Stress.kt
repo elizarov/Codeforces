@@ -1,8 +1,8 @@
-import algo.time
+import algo.timeProcess
 import kotlin.random.Random
 import kotlin.random.nextInt
 
-fun main() {
+fun main() = timeProcess {
     val n = 200_000
     val m = 200_000
     val rnd = Random(1)
@@ -14,7 +14,5 @@ fun main() {
         g.add(u, v, w)
         g.add(v, u, -w)
     }
-    time {
-        solveE(n, g)
-    }
+    println(solveE(n, g))
 }

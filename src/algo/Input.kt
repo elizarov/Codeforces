@@ -1,108 +1,51 @@
 package algo
 
-fun readIntArray(): IntArray {
-    val input = System.`in`
-    var m = 0
-    val eol = '\n'
-    var c = eol
-    fun nextChar() {
-        var b = input.read()
-        if (b == '\r'.toInt()) b = input.read()
-        c = if (b < 0) eol else b.toChar()
+class Input {
+    private val input = System.`in`
+    private val buf = ByteArray(65536)
+    private var pos = 0
+    private var rem = 0
+    private val eol = Char(13)
+    private val eof = Char(0)
+    private var ch = eol
+
+    private fun nextBuf() {
+        require(ch != eof) { "Reading past end of file" }
+        rem = input.read(buf).coerceAtLeast(0)
+        pos = 0
     }
-    nextChar()
-    var res = IntArray(4)
-    while (c != eol) {
+
+    private fun takeByte(): Int {
+        if (pos >= rem) nextBuf()
+        return if (pos < rem) buf[pos++].toUInt().toInt() else 0
+    }
+
+    private fun nextChar() {
+        var b = takeByte()
+        if (b == 10) b = takeByte()
+        ch = b.toChar()
+    }
+
+    fun readInt(): Int {
+        while (ch == ' ' || ch == eol) nextChar()
+        require(ch != eof) { "End of file" }
         var cur = 0
         var neg = false
-        if (c == '-') {
+        if (ch == '-') {
             neg = true
             nextChar()
         }
         while (true) {
-            val d = c.toInt() - '0'.toInt()
-            require(d in 0..9) { "Unexpected character '$c' at $m" }
-            require(cur >= Integer.MIN_VALUE / 10) { "Overflow at $m" }
+            val d = ch.code - '0'.code
+            require(d in 0..9) { "Unexpected character '$ch'" }
+            require(cur >= Integer.MIN_VALUE / 10) { "Overflow" }
             cur = cur * 10 - d
-            require(cur <= 0) { "Overflow at $m" }
+            require(cur <= 0) { "Overflow" }
             nextChar()
-            if (c == ' ' || c == eol) break
+            if (ch <= ' ') break
         }
-        if (m >= res.size) res = res.copyOf(res.size * 2)
-        res[m] = if (neg) cur else (-cur).also { require(it >= 0) { "Overflow at $m" } }
-        m++
-        while (c == ' ') nextChar()
+        return if (neg) cur else (-cur).also { require(it >= 0) { "Overflow" } }
     }
-    if (m < res.size) res = res.copyOf(m)
-    return res
-}
 
-fun String.splitToIntArray(): IntArray {
-    val n = length
-    if (n == 0) return IntArray(0) // EMPTY
-    var res = IntArray(4)
-    var m = 0
-    var i = 0
-    while (true) {
-        var cur = 0
-        var neg = false
-        var c = get(i) // expecting number, IOOB if there is no number
-        if (c == '-') {
-            neg = true
-            i++
-            c = get(i) // expecting number, IOOB if there is no number
-        }
-        while (true) {
-            val d = c.toInt() - '0'.toInt()
-            require(d in 0..9) { "Unexpected character '$c' at $i" }
-            require(cur >= Integer.MIN_VALUE / 10) { "Overflow at $i" }
-            cur = cur * 10 - d
-            require(cur <= 0) { "Overflow at $i" }
-            i++
-            if (i >= n) break
-            c = get(i)
-            if (c == ' ') break
-        }
-        if (m >= res.size) res = res.copyOf(res.size * 2)
-        res[m++] = if (neg) cur else (-cur).also { require(it >= 0) { "Overflow at $i" } }
-        if (i >= n) break
-        i++
-    }
-    if (m < res.size) res = res.copyOf(m)
-    return res
-}
-
-private fun String.splitToLongArray(): LongArray {
-    val n = length
-    if (n == 0) return LongArray(0) // EMPTY
-    var res = LongArray(4)
-    var m = 0
-    var i = 0
-    while (true) {
-        var cur = 0L
-        var neg = false
-        var c = get(i) // expecting number, IOOB if there is no number
-        if (c == '-') {
-            neg = true
-            i++
-            c = get(i) // expecting number, IOOB if there is no number
-        }
-        while (true) {
-            val d = c.toInt() - '0'.toInt()
-            require(d in 0..9) { "Unexpected character '$c' at $i" }
-            require(cur >= Long.MIN_VALUE / 10) { "Overflow at $i" }
-            cur = cur * 10 - d
-            require(cur <= 0) { "Overflow at $i" }
-            i++
-            if (i >= n) break
-            c = get(i)
-            if (c == ' ') break
-        }
-        if (m >= res.size) res = res.copyOf(res.size * 2)
-        res[m++] = if (neg) cur else (-cur).also { require(it >= 0) { "Overflow at $i" } }
-        if (i >= n) break
-        i++
-    }
-    if (m < res.size) res = res.copyOf(m)
-    return res
+    fun readIntArray(n: Int): IntArray = IntArray(n) { readInt() }
 }

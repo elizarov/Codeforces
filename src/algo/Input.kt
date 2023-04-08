@@ -5,7 +5,7 @@ class Input {
     private val buf = ByteArray(65536)
     private var pos = 0
     private var rem = 0
-    private val eol = Char(13)
+    private val eol = Char(10)
     private val eof = Char(0)
     private var ch = eol
 
@@ -22,7 +22,7 @@ class Input {
 
     private fun nextChar() {
         var b = takeByte()
-        if (b == 10) b = takeByte()
+        if (b == 13) b = takeByte()
         ch = b.toChar()
     }
 

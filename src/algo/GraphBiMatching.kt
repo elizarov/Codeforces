@@ -47,7 +47,7 @@ fun Graph.maxBiMatching(m: Int): IntArray {
 
 // test
 fun main() {
-    val g = Graph(8)
+    val g = Graph(8, 7)
     g.add(0, 4)
     g.add(0, 6)
     g.add(0, 5)

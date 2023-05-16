@@ -39,7 +39,7 @@
     </orderEntry>
     <orderEntry type="library" name="jna-5.13.0" level="project" />
     <orderEntry type="library" name="jna-platform-5.13.0" level="project" />
-    <orderEntry type="library" name="KotlinJavaRuntime" level="project" />
     <orderEntry type="library" name="jetbrains.kotlin.test.junit" level="project" />
+    <orderEntry type="library" name="jetbrains.kotlin.stdlib.jdk8" level="project" />
   </component>
 </module>

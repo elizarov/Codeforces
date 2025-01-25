@@ -5,4 +5,3 @@ fun main() {
         val s = a.sumOf { it.toLong() }
         println(s - 2 * a[n - 2])
     }
-}
